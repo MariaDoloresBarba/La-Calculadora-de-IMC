@@ -33,7 +33,9 @@ public class VistaCalculadora extends javax.swing.JPanel {
     public JLabel getLblClasificacion(){ 
         return lblClasificacion; 
     }
-    
+     public JButton btnCalcular(){
+       return btnCalcular;
+   }
     
     public VistaCalculadora() {
         initComponents();
