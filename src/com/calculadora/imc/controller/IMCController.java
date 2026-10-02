@@ -38,7 +38,13 @@ public class IMCController {
             vista.lblClasificacion.setText("Error, datos inválidos");
             return;
         }
-      }
+      
+      double imc = calculadora.calcular(peso, altura);
+      String clasificacion = calculadora.clasificar(imc);
+      
+      vista.lblResultado.setText(String.format("Tu IMC es: %.2f", imc));
+      vista.lblClasificacion.setText("Clasificacion: " + clasificacion);
+    }
       
 }
 
