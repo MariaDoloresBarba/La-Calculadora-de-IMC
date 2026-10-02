@@ -44,7 +44,27 @@ public class IMCController {
       
       vista.lblResultado.setText(String.format("Tu IMC es: %.2f", imc));
       vista.lblClasificacion.setText("Clasificacion: " + clasificacion);
-    }
       
+      colorPeso(clasificacion);
+    }
+      private void colorPeso(String clasificacion){
+          switch(clasificacion){
+              case "Peso normal":
+                vista.lblClasificacion.setForeground(Color.green);
+                break;
+                
+              case "Bajo Peso":
+              case "Sobrepeso":
+                  vista.lblClasificacion.setForeground(Color.orange);
+                  break;
+              case "Obesidad":
+                  vista.lblClasificacion.setForeground(Color.red);
+                  break;
+              default:
+                  vista.lblClasificacion.setForeground(Color.black);
+                  break;
+              
+          }
+      }
 }
 
