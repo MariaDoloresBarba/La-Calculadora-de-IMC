@@ -48,6 +48,7 @@ public class VistaCalculadora extends javax.swing.JPanel {
         lblResultado.setText("IMC:");
 
         btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(this::btnCalcularActionPerformed);
 
         lblClasificacion.setText("Clasificación:");
 
@@ -112,14 +113,18 @@ public class VistaCalculadora extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAlturaActionPerformed
 
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCalcularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel lblClasificacion;
-    private javax.swing.JLabel lblResultado;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel lblClasificacion;
+    public javax.swing.JLabel lblResultado;
     private javax.swing.JTextField txtAltura;
     private javax.swing.JTextField txtPeso;
     // End of variables declaration//GEN-END:variables
