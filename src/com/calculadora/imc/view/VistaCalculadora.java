@@ -20,9 +20,7 @@ public class VistaCalculadora extends javax.swing.JFrame {
         this.boton = new com.calculadora.imc.controller.IMCController(this);
     }
     
-    private void btnCalcular(java.awt.event.ActionEvent evento){
-        boton.btnCalcular();
-    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,6 +48,7 @@ public class VistaCalculadora extends javax.swing.JFrame {
         jLabel3.setText("Altura:");
 
         btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(this::btnCalcularActionPerformed);
 
         lblResultado.setText("IMC");
 
@@ -112,6 +111,11 @@ public class VistaCalculadora extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        // TODO add your handling code here:
+        boton.btnCalcular();
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
