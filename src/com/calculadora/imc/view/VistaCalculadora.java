@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package com.calculadora.imc.view;
 
 import javax.swing.JButton;
@@ -18,29 +15,7 @@ public class VistaCalculadora extends javax.swing.JPanel {
      * Creates new form VistaCalculadora
      */
     
-    public JTextField getTxtPeso(){
-        return txtPeso;
-    }
-    public JTextField getTxtAltura(){ 
-        return txtAltura; 
-    }
-    public JButton getBtnCalcular(){ 
-        return btnCalcular; 
-    }
-    public JLabel getLblResultado(){ 
-        return lblResultado; 
-    }
-    public JLabel getLblClasificacion(){ 
-        return lblClasificacion; 
-    }
-     public JButton btnCalcular(){
-       return btnCalcular;
-   }
-    
-    public VistaCalculadora() {
-        initComponents();
-    }
-
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
