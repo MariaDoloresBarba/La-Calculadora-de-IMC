@@ -14,23 +14,31 @@ import javax.swing.JTextField;
  */
 
 public class IMCController {
-    private final JTextField txtPeso;
-    private final JTextField txtAltura;
-    private final JButton btnCalcular;
-    private final JLabel lblResultado;
-    private final JLabel lblClasificacion;
-    
+    private final VistaCalculadora vista;  
     private final  CalculadoraIMC calculadora = new CalculadoraIMC();
     
-    private static final Color VERDE = Color.GREEN;
-    private static final Color NARANJA = Color.ORANGE;
-    private static final Color ROJO = Color.RED;
     
     public IMCController(VistaCalculadora vista){
-        this.txtPeso = vista.getTxtPeso();
-        this.txtAltura = vista.getTxtAltura();
-        this.btnCalcular = vista.getBtnCalcular();
-        this.lblResultado = vista.getLblResultado();
-        this.lblClasificacion = vista.getLblClasificacion();
+        this.vista = vista;
     }
+    
+    public void btnCalcular(){
+      String pesoKG = vista.txtPeso.getText().trim();
+      String alturaCM = vista.txtAltura.getText().trim();
+      
+      double peso;
+      double altura;
+      try{
+          peso = Double.parseDouble(pesoKG);
+          altura = Double.parseDouble(alturaCM);
+          if(peso <= 0 || altura <= 0){
+              vista.lblClasificacion.setText("Erros, los datos deben se mayo que 0");
+          }
+        }catch(NumberFormatException e){
+            vista.lblClasificacion.setText("Error, datos inválidos");
+            return;
+        }
+      }
+      
 }
+
