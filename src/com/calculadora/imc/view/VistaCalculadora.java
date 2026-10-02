@@ -1,21 +1,28 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package com.calculadora.imc.view;
-
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 
 /**
  *
- * @author María Dolores Barba López
+ * @author lola
  */
-public class VistaCalculadora extends javax.swing.JPanel {
-
+public class VistaCalculadora extends javax.swing.JFrame {
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaCalculadora.class.getName());
+    private com.calculadora.imc.controller.IMCController boton;
     /**
      * Creates new form VistaCalculadora
      */
+    public VistaCalculadora() {
+        initComponents();
+        this.boton = new com.calculadora.imc.controller.IMCController(this);
+    }
     
-   
+    private void btnCalcular(java.awt.event.ActionEvent evento){
+        boton.btnCalcular();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,102 +37,115 @@ public class VistaCalculadora extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         txtPeso = new javax.swing.JTextField();
         txtAltura = new javax.swing.JTextField();
-        lblResultado = new javax.swing.JLabel();
         btnCalcular = new javax.swing.JButton();
+        lblResultado = new javax.swing.JLabel();
         lblClasificacion = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("CALCULADORA");
 
-        jLabel2.setText("Peso:");
+        jLabel2.setText("Peso: ");
 
         jLabel3.setText("Altura:");
 
-        txtPeso.addActionListener(this::txtPesoActionPerformed);
-
-        txtAltura.setText("jTextField2");
-        txtAltura.addActionListener(this::txtAlturaActionPerformed);
-
-        lblResultado.setText("IMC:");
-
         btnCalcular.setText("Calcular");
-        btnCalcular.addActionListener(this::btnCalcularActionPerformed);
 
-        lblClasificacion.setText("Clasificación:");
+        lblResultado.setText("IMC");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        lblClasificacion.setText("Clasificacion");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(157, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnCalcular)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblClasificacion)
-                        .addGap(16, 16, 16)))
-                .addGap(157, 157, 157))
             .addGroup(layout.createSequentialGroup()
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(lblResultado)))
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(159, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(141, 141, 141))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnCalcular)
+                        .addGap(151, 151, 151))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblClasificacion)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblResultado)
+                                .addGap(13, 13, 13)))
+                        .addGap(167, 167, 167))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                .addGap(32, 32, 32)
                 .addComponent(btnCalcular)
                 .addGap(18, 18, 18)
                 .addComponent(lblResultado)
                 .addGap(18, 18, 18)
                 .addComponent(lblClasificacion)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPesoActionPerformed
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
-    private void txtAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAlturaActionPerformed
-
-    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCalcularActionPerformed
-
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new VistaCalculadora().setVisible(true));
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCalcular;
+    public javax.swing.JButton btnCalcular;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
     public javax.swing.JLabel lblClasificacion;
     public javax.swing.JLabel lblResultado;
-    private javax.swing.JTextField txtAltura;
-    private javax.swing.JTextField txtPeso;
+    public javax.swing.JTextField txtAltura;
+    public javax.swing.JTextField txtPeso;
     // End of variables declaration//GEN-END:variables
 }
