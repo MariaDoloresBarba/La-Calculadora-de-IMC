@@ -33,13 +33,13 @@ public class IMCController {
           altura = Double.parseDouble(alturaCM);
           
           if(peso <= 0 || altura <= 0){
-              vista.lblResultado.setText("IMC: --");
+              vista.lblResultado.setText("IMC: ");
               vista.lblClasificacion.setText("Error, los datos deben ser mayores que 0");
               vista.lblClasificacion.setForeground(Color.red);
               return; 
             }
         } catch(NumberFormatException e) {
-          vista.lblResultado.setText("IMC: --");
+          vista.lblResultado.setText("IMC: ");
           vista.lblClasificacion.setText("Error, datos inválidos");
           vista.lblClasificacion.setForeground(Color.red);
           return;
