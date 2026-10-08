@@ -19,6 +19,30 @@ public class VistaCalculadora extends javax.swing.JFrame {
         initComponents();
         this.boton = new com.calculadora.imc.controller.IMCController(this);
     }
+
+    public javax.swing.JButton getBtnCalcular() {
+        return btnCalcular;
+    }
+
+    
+    public javax.swing.JLabel getLblClasificacion() {
+        return lblClasificacion;
+    }
+
+    
+    public javax.swing.JLabel getLblResultado() {
+        return lblResultado;
+    }
+
+    
+    public javax.swing.JTextField getTxtAltura() {
+        return txtAltura;
+    }
+
+    
+    public javax.swing.JTextField getTxtPeso() {
+        return txtPeso;
+    }
     
     
     /**
@@ -30,9 +54,9 @@ public class VistaCalculadora extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        lblPeso = new javax.swing.JLabel();
+        lblAltura = new javax.swing.JLabel();
         txtPeso = new javax.swing.JTextField();
         txtAltura = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
@@ -41,11 +65,11 @@ public class VistaCalculadora extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("CALCULADORA");
+        lblTitulo.setText("CALCULADORA");
 
-        jLabel2.setText("Peso: ");
+        lblPeso.setText("Peso: ");
 
-        jLabel3.setText("Altura:");
+        lblAltura.setText("Altura:");
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(this::btnCalcularActionPerformed);
@@ -60,21 +84,21 @@ public class VistaCalculadora extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addComponent(lblAltura)
                         .addGap(18, 18, 18)
-                        .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtAltura))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(lblPeso)
                         .addGap(18, 18, 18)
-                        .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(165, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(159, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(lblTitulo)
                         .addGap(141, 141, 141))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnCalcular)
@@ -91,14 +115,14 @@ public class VistaCalculadora extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1)
+                .addComponent(lblTitulo)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(lblPeso)
                     .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(lblAltura)
                     .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(btnCalcular)
@@ -143,13 +167,15 @@ public class VistaCalculadora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnCalcular;
-    private javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel lblClasificacion;
-    public javax.swing.JLabel lblResultado;
-    public javax.swing.JTextField txtAltura;
-    public javax.swing.JTextField txtPeso;
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JLabel lblAltura;
+    private javax.swing.JLabel lblClasificacion;
+    private javax.swing.JLabel lblPeso;
+    private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextField txtAltura;
+    private javax.swing.JTextField txtPeso;
     // End of variables declaration//GEN-END:variables
+
+
 }
