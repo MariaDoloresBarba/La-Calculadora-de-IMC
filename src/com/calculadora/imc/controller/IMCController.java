@@ -20,10 +20,10 @@ public class IMCController {
     }
     
     public void btnCalcular(){
-      String pesoKG = vista.txtPeso.getText().trim();
-      String alturaCM = vista.txtAltura.getText().trim();
+      String pesoKG = vista.getTxtPeso().getText().trim();
+      String alturaCM = vista.getTxtAltura().getText().trim();
       
-      pesoKG = pesoKG.replace(',', '.');
+      pesoKG = pesoKG.replace(',', '.'); //Es mejor el punto porque la coma se usa como carácter espcial en algunas funciones de java.
       alturaCM = alturaCM.replace(',', '.');
       
       double peso;
@@ -33,23 +33,23 @@ public class IMCController {
           altura = Double.parseDouble(alturaCM);
           
           if(peso <= 0 || altura <= 0){
-              vista.lblResultado.setText("IMC: ");
-              vista.lblClasificacion.setText("Error, los datos deben ser mayores que 0");
-              vista.lblClasificacion.setForeground(Color.red);
+              vista.getLblResultado().setText("IMC: ");
+              vista.getLblClasificacion().setText("Error, los datos deben ser mayores que 0");
+              vista.getLblClasificacion().setForeground(Color.red);
               return; 
             }
         } catch(NumberFormatException e) {
-          vista.lblResultado.setText("IMC: ");
-          vista.lblClasificacion.setText("Error, datos inválidos");
-          vista.lblClasificacion.setForeground(Color.red);
+          vista.getLblResultado().setText("IMC: ");
+          vista.getLblClasificacion().setText("Error, datos inválidos");
+          vista.getLblClasificacion().setForeground(Color.red);
           return;
       }
       
       double imc = calculadora.calcular(peso, altura);
       String clasificacion = calculadora.clasificar(imc);
       
-      vista.lblResultado.setText(String.format("Tu IMC es: %.2f", imc));
-      vista.lblClasificacion.setText("Clasificación: " + clasificacion);
+      vista.getLblResultado().setText(String.format("Tu IMC es: %.2f", imc));
+      vista.getLblClasificacion().setText("Clasificación: " + clasificacion);
       
       colorPeso(clasificacion);
     }
@@ -57,19 +57,19 @@ public class IMCController {
     private void colorPeso(String clasificacion){
         switch(clasificacion){
             case "Peso Normal":
-                vista.lblClasificacion.setForeground(Color.green);
+                vista.getLblClasificacion().setForeground(Color.green);
                 break;
             case "Bajo Peso":
-                vista.lblClasificacion.setForeground(Color.orange);
+                vista.getLblClasificacion().setForeground(Color.orange);
                 break;
             case "Sobrepeso":
-                vista.lblClasificacion.setForeground(Color.orange);
+                vista.getLblClasificacion().setForeground(Color.orange);
                 break;
             case "Obesidad":
-                vista.lblClasificacion.setForeground(Color.red);
+                vista.getLblClasificacion().setForeground(Color.red);
                 break;
             default:
-                vista.lblClasificacion.setForeground(Color.black);
+                vista.getLblClasificacion().setForeground(Color.black);
                 break;
         }
     }
