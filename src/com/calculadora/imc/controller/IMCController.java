@@ -60,6 +60,8 @@ public class IMCController {
                 vista.lblClasificacion.setForeground(Color.green);
                 break;
             case "Bajo Peso":
+                vista.lblClasificacion.setForeground(Color.orange);
+                break;
             case "Sobrepeso":
                 vista.lblClasificacion.setForeground(Color.orange);
                 break;
