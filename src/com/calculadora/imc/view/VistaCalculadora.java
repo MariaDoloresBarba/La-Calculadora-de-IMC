@@ -19,7 +19,7 @@ public class VistaCalculadora extends javax.swing.JFrame {
         initComponents();
         this.boton = new com.calculadora.imc.controller.IMCController(this);
     }
-
+    //He insertado los getters usando el botón refactor.
     public javax.swing.JButton getBtnCalcular() {
         return btnCalcular;
     }
